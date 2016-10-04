@@ -10,21 +10,21 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>Log In</title>
+    <title>CILO Log In</title>
   
     <!-- Bootstrap -->
     <link href="css/bootstrap.min.css" rel="stylesheet" media="screen">
+    <link href="css/main.css" rel="stylesheet" >
     <script src="http://code.jquery.com/jquery.js"></script>
     <script src="js/bootstrap.min.js"></script>
 	<script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
     <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     
     <link rel="SHORTCUT ICON" href="img/iconb.ico"> 
-    <link rel="stylesheet" href="" data-href="style-Teal.css" type="text/css" media="screen" class="skincsslittle" />
 	<style type="text/css">
 	.header{
 		width:100%;
-		height:50px;
+		height:0px;
 		float:top;	
 	}
 	.blank{
@@ -56,58 +56,19 @@
 		text-align:right;
 	}
 	
+	.footer{
+	
+	width:1198px;
+	
+	height:100px;
+
+	float:bottom;
+	}
+	
 	</style>
     
 </head>
 <body>
-	<script language="javascript">
-	jQuery('.skin li').click(function(){
-    var currentClass = jQuery(this).attr('class');
-    jQuery(this).siblings().removeClass('hover');
-    jQuery(this).addClass('hover');
-    var cc = currentClass.substring(0,5);
-    cc = convertcsslittle(cc);
-    var skincssurl = jQuery('.stylecssurl').attr('href').substring(0,jQuery('.stylecssurl').attr('href').indexOf('style')) + cc;
-    jQuery('.skincsslittle').attr("href",skincssurl);
-
-    createCookie('skin',currentClass,365);
-});
-function readCookie(name) {
-  var nameEQ = name + "=";
-  var ca = document.cookie.split(';');
-  for(var i=0;i < ca.length;i++) {
-    var c = ca[i];
-    while (c.charAt(0)==' ') c = c.substring(1,c.length);
-    if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length,c.length);
-  }
-  return false;
-}
-
-function createCookie(name,value,days) {
-    if (days) {
-        var date = new Date();
-        date.setTime(date.getTime()+(days*24*60*60*1000));
-        var expires = "; expires="+date.toGMTString();
-    }
-    else expires = "";
-    document.cookie = name+"="+value+expires+"; path=/";
-}
-var cccc = readCookie("skin");
-
-if (cccc){
-    cccc = cccc.substring(0,5);
-    jQuery('.'+cccc).addClass('hover').siblings().removeClass('hover');
-    ccc = convertcsslittle(cccc);
-    var skincssurl = jQuery('.stylecssurl').attr('href').substring(0,jQuery('.stylecssurl').attr('href').indexOf('style')) + ccc;
-    jQuery('.skincsslittle').attr("href",skincssurl);
-}else{
-    var currentcss = jQuery('.skincsslittle').attr("data-href");
-    var currentcssname = currentcss.substring(currentcss.indexOf('style'),currentcss.length);
-    currentcssname = defaulttoclass(currentcssname);
-    jQuery('.'+currentcssname).addClass('hover').siblings().removeClass('hover');
-    jQuery('.skincsslittle').attr("href",jQuery('.skincsslittle').attr("data-href"));
-}
-	</script>
 	
     <div class="header">
 
@@ -130,29 +91,19 @@ if (cccc){
 
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-      <ul class="nav navbar-nav">
-        <li class="active"><a href="#">Login <span class="sr-only">(current)</span></a></li>
-        <li><a href="blog.html">Home</a></li>
-		<li><a href="manage.html">Manage</a></li>
-      </ul>
-      <form class="navbar-form navbar-left" role="search">
-        <div class="form-group">
-          <input type="text" class="form-control" placeholder="Course Name">
-        </div>
-        <button type="submit" class="btn btn-default">Search</button>
-      </form>
       <ul class="nav navbar-nav navbar-right">
         <a class="navbar-brand" ><img src="img/icon.png"></a>
+        <li class="active"><a href="#">Login <span class="sr-only">(current)</span></a></li>
         <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">It Can Dropdown <span class="caret"></span></a>
-        <div class="skin">
-    		<ul class="dropdown-menu">
-        		<li class="skin1 hover"></li>
-        		<li class="skin2"></li>
-        		<li class="skin3"></li>
-        		<li class="skin4"></li>
-    		</ul>
-		</div>
+          <ul class="dropdown-menu">
+           		<li><a href="home.html">But There Is</a></li>
+            	<li><a href="course.html">No Link</a></li>
+            	<li><a href="addcourse.html">Just Show It For</a></li>
+            	<li><a href="addpaper.html">INTERESTING</a></li>
+            	<li role="separator" class="divider"></li>
+            	<li><a href="joincourse.html">23333</a></li>
+          </ul>
         </li>
       </ul>
     </div><!-- /.navbar-collapse -->
@@ -166,8 +117,7 @@ if (cccc){
 	
 	<div class="login">
 	<div class="well well-sm">
-	
-	<h2> LOG IN </h2>
+	<h3> CILO LOG IN</h3>
 	<hr />
 	<div class="input-group input-group-lg">
 		<span class="input-group-addon" id="sizing-addon1">E-mail&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
@@ -182,21 +132,12 @@ if (cccc){
 	<input type="checkbox" name="rememberme" value="rememberme" />&nbsp;Remember me<br/>
 	<br />
 	<div class="left">
-	<button type="submit" class="btn btn-default" name="Submit" onclick="#">Log In</button>
+	<button type="submit" class="btn btn-default" name="Submit" onclick="home.html">Log In</button>
 	<button type="submit" class="btn btn-default" name="Signin" onclick="#">Sign Up</button>
-	<div class="skin">
-    		<ul class="dropdown-menu">
-        		<li class="skin1 hover"></li>
-        		<li class="skin2"></li>
-        		<li class="skin3"></li>
-        		<li class="skin4"></li>
-    		</ul>
-		</div>
 	</div>
 	<div class="right">
 	<button type="submit" style="align:left" class="btn btn-default" name="Forget" onclick="#">Forget?</button>
-	</div> 
-	
+	</div>
 	<div class="left">
 	
 	
